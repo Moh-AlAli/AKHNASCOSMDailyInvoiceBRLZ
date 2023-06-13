@@ -39,7 +39,7 @@ Partial Class dailyinv
         Me.rbinv = New System.Windows.Forms.RadioButton()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.CMDClose = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Pictocust, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Picfromcust, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,7 +52,7 @@ Partial Class dailyinv
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(16, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 16)
+        Me.Label1.Size = New System.Drawing.Size(113, 16)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Document Date"
         '
@@ -131,7 +131,7 @@ Partial Class dailyinv
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(16, 71)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(97, 16)
+        Me.Label4.Size = New System.Drawing.Size(96, 16)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Customer No"
         '
@@ -141,7 +141,7 @@ Partial Class dailyinv
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(341, 13)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(27, 16)
+        Me.Label3.Size = New System.Drawing.Size(26, 16)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "To"
         '
@@ -151,7 +151,7 @@ Partial Class dailyinv
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(182, 12)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 16)
+        Me.Label2.Size = New System.Drawing.Size(42, 16)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "From"
         '
@@ -172,7 +172,7 @@ Partial Class dailyinv
         Me.rbcrdb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbcrdb.Location = New System.Drawing.Point(289, 14)
         Me.rbcrdb.Name = "rbcrdb"
-        Me.rbcrdb.Size = New System.Drawing.Size(104, 20)
+        Me.rbcrdb.Size = New System.Drawing.Size(103, 20)
         Me.rbcrdb.TabIndex = 12
         Me.rbcrdb.Text = "Credit Note"
         Me.rbcrdb.UseVisualStyleBackColor = True
@@ -184,7 +184,7 @@ Partial Class dailyinv
         Me.rbinv.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbinv.Location = New System.Drawing.Point(133, 14)
         Me.rbinv.Name = "rbinv"
-        Me.rbinv.Size = New System.Drawing.Size(76, 20)
+        Me.rbinv.Size = New System.Drawing.Size(75, 20)
         Me.rbinv.TabIndex = 11
         Me.rbinv.TabStop = True
         Me.rbinv.Text = "Invoice"
@@ -196,7 +196,7 @@ Partial Class dailyinv
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(6, 16)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(95, 16)
+        Me.Label5.Size = New System.Drawing.Size(94, 16)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Report Type"
         '
@@ -210,22 +210,22 @@ Partial Class dailyinv
         Me.Button1.Text = "Print"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
+        'CMDClose
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(318, 170)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 15
-        Me.Button2.Text = "Exit"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.CMDClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CMDClose.Location = New System.Drawing.Point(318, 170)
+        Me.CMDClose.Name = "CMDClose"
+        Me.CMDClose.Size = New System.Drawing.Size(75, 23)
+        Me.CMDClose.TabIndex = 15
+        Me.CMDClose.Text = "Exit"
+        Me.CMDClose.UseVisualStyleBackColor = True
         '
         'dailyinv
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(469, 197)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.CMDClose)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -255,7 +255,7 @@ Partial Class dailyinv
     Friend WithEvents rbinv As System.Windows.Forms.RadioButton
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents CMDClose As System.Windows.Forms.Button
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
 

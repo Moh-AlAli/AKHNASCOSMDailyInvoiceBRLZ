@@ -3,13 +3,9 @@ Imports CrystalDecisions.Shared
 Imports System.Security.Cryptography
 Imports System.IO
 Imports System.Text
-
-
+Imports acc = ACCPAC.Advantage
 
 Friend Class crviewer
-
-
-
     Private rdoc As New ReportDocument
     Private conrpt As New ConnectionInfo()
     Dim server As String = ""
@@ -17,10 +13,16 @@ Friend Class crviewer
     Dim pass As String = ""
     Dim fdate As String = ""
     Dim tdate As String = ""
+    Private ccompid As String
+    Private ccompname As String
+    Private cfdate As String
+    Private ctdate As String
+    Private cfrmcust As String
+    Private ctocust As String
+    Private crbinv As Boolean
+    Private crbcrn As Boolean
 
-
-
-
+    Friend Property ObjectHandle As String
     Friend Function createdes(ByVal key As String) As TripleDES
         Dim md5 As MD5 = New MD5CryptoServiceProvider()
         Dim des As TripleDES = New TripleDESCryptoServiceProvider()
@@ -52,20 +54,40 @@ Friend Class crviewer
         uid = Decryption(uid, secretkey)
         pass = Decryption(pass, secretkey)
 
-        Dim cons As String = "" '"Data Source =(Local); DataBase =" & custstatement.compid & "; User Id =" & uid & "; Password =" & pass & ";"
+        Dim cons As String = ""
 
         Return cons
     End Function
+    Public Sub New(ByVal _objectHandle As String, ByVal _sess As acc.Session, ByVal fdate As String, ByVal tdate As String, ByVal frmcust As String, ByVal tocust As String, ByVal rbinv As Boolean, ByVal rbcrn As Boolean)
+        InitializeComponent()
+        ObjectHandle = _objectHandle
+        ccompid = _sess.CompanyID
+        ccompname = _sess.CompanyName
+        cfdate = fdate
+        ctdate = tdate
+        cfrmcust = frmcust
+        ctocust = tocust
+        crbinv = rbinv
+        crbcrn = rbcrn
+
+
+    End Sub
+
+    Public Sub New(ByVal _objectHandle As String)
+        InitializeComponent()
+        ObjectHandle = _objectHandle
+    End Sub
+
     Private Sub CrystalReportViewer1_Load(sender As Object, e As EventArgs) Handles cryviewer.Load
 
         Try
 
             Dim type As Integer
 
-            If dailyinv.rbinv.Checked = True Then
+            If crbinv = True Then
                 type = 0
                 rdoc.Load("reports\ARDLYINVRPT.rpt")
-            ElseIf dailyinv.rbcrdb.Checked = True Then
+            ElseIf crbcrn = True Then
                 type = 1
                 rdoc.Load("reports\ARDLYCRDRRPT.rpt")
             End If
@@ -73,42 +95,12 @@ Friend Class crviewer
 
             Dim tabs As Tables = rdoc.Database.Tables
 
-         
-            Dim fmonthnew As String = 0
-
-            If dailyinv.DateTimePicker1.Value.Month.ToString.Length < 2 Then
-                fmonthnew = "0" & dailyinv.DateTimePicker1.Value.Month
-            Else
-                fmonthnew = dailyinv.DateTimePicker1.Value.Month
-            End If
 
 
-            Dim tmonthnew As String = 0
-            If dailyinv.DateTimePicker2.Value.Month.ToString.Length < 2 Then
-                tmonthnew = "0" & dailyinv.DateTimePicker2.Value.Month
-            Else
-                tmonthnew = dailyinv.DateTimePicker2.Value.Month
-            End If
 
 
-            Dim fdaynew As String = 0
-            If dailyinv.DateTimePicker1.Value.Day.ToString.Length < 2 Then
-                fdaynew = "0" & dailyinv.DateTimePicker1.Value.Day
-            Else
-                fdaynew = dailyinv.DateTimePicker1.Value.Day
-            End If
-
-
-            Dim tdaynew As String = 0
-            If dailyinv.DateTimePicker2.Value.Day.ToString.Length < 2 Then
-                tdaynew = "0" & dailyinv.DateTimePicker2.Value.Day
-            Else
-                tdaynew = dailyinv.DateTimePicker2.Value.Day
-            End If
-
-
-            fdate = dailyinv.DateTimePicker1.Value.Year & fmonthnew & fdaynew
-            tdate = dailyinv.DateTimePicker2.Value.Year & tmonthnew & tdaynew
+            fdate = cfdate
+            tdate = ctdate
 
 
             Readconnectionstring()
@@ -116,7 +108,7 @@ Friend Class crviewer
 
                 Dim tablog As TableLogOnInfo = TAB.LogOnInfo
                 conrpt.ServerName = server
-                conrpt.DatabaseName = dailyinv.compid
+                conrpt.DatabaseName = ccompid
                 conrpt.UserID = uid
                 conrpt.Password = pass
                 tablog.ConnectionInfo = conrpt
@@ -125,9 +117,9 @@ Friend Class crviewer
 
             rdoc.SetParameterValue("FrmDate", fdate)
             rdoc.SetParameterValue("Todate", tdate)
-            rdoc.SetParameterValue("FRMCUST", dailyinv.Txtfrmcus.Text)
-            rdoc.SetParameterValue("TOCUST", dailyinv.Txttocus.Text)
-            rdoc.SetParameterValue("CONAME", dailyinv.compname)
+            rdoc.SetParameterValue("FRMCUST", cfrmcust)
+            rdoc.SetParameterValue("TOCUST", ctocust)
+            rdoc.SetParameterValue("CONAME", ccompname)
             rdoc.SetParameterValue("type", type)
 
             cryviewer.ReportSource = rdoc
