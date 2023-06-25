@@ -49,6 +49,9 @@
   <PropertyGroup>
     <ApplicationIcon>logoicon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ACCPAC.Advantage, Version=6.7.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>

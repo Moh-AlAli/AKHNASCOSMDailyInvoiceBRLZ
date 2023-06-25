@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Pictocust.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Btfind.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAZ5JREFUOE+Vk01vqkAUhklcmLjwdxkTF6ZduHHl3vgLXXkXbfqhYqCWC8jHIAoO
+        vwAADr8BOAVTJAAAAZ5JREFUOE+Vk01vqkAUhklcmLjwdxkTF6ZduHHl3vgLXXkXbfqhYqCWC8jHIAoO
         gqitrbx3ZjLWW5sm7ZMcyJw5zzkTJihFUYDD3/ttDkopixgvuy2K4/Fj7zKObE/hm2+HV3g+wfDZx51O
         cDvxcKNacD2Cw+tBNLhEygVsx4PmxjDDFH+DBJoT4cGY48/YhT1zZPlnhLzJUhgkQrJ9Ad3sQeJcNNCd
         GI+swa3uIE2pVM4IebEI4S5ztnhHvj9gTnewFxl0l2JkLXGjEczDUCpnhDwPiCheZTvEGZtMt7AWKZ58
@@ -131,10 +131,10 @@
         4kS/32dP4B8/IUSEUqOS/QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Picfromcust.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Bffind.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAZ5JREFUOE+Vk01vqkAUhklcmLjwdxkTF6ZduHHl3vgLXXkXbfqhYqCWC8jHIAoO
+        vwAADr8BOAVTJAAAAZ5JREFUOE+Vk01vqkAUhklcmLjwdxkTF6ZduHHl3vgLXXkXbfqhYqCWC8jHIAoO
         gqitrbx3ZjLWW5sm7ZMcyJw5zzkTJihFUYDD3/ttDkopixgvuy2K4/Fj7zKObE/hm2+HV3g+wfDZx51O
         cDvxcKNacD2Cw+tBNLhEygVsx4PmxjDDFH+DBJoT4cGY48/YhT1zZPlnhLzJUhgkQrJ9Ad3sQeJcNNCd
         GI+swa3uIE2pVM4IebEI4S5ztnhHvj9gTnewFxl0l2JkLXGjEczDUCpnhDwPiCheZTvEGZtMt7AWKZ58

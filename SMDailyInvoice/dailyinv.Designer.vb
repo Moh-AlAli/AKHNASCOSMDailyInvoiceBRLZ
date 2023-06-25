@@ -27,8 +27,8 @@ Partial Class dailyinv
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Pictocust = New System.Windows.Forms.PictureBox()
-        Me.Picfromcust = New System.Windows.Forms.PictureBox()
+        Me.Btfind = New System.Windows.Forms.PictureBox()
+        Me.Bffind = New System.Windows.Forms.PictureBox()
         Me.Txttocus = New System.Windows.Forms.TextBox()
         Me.Txtfrmcus = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -38,11 +38,11 @@ Partial Class dailyinv
         Me.rbcrdb = New System.Windows.Forms.RadioButton()
         Me.rbinv = New System.Windows.Forms.RadioButton()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Butprint = New System.Windows.Forms.Button()
         Me.CMDClose = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.Pictocust, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Picfromcust, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Btfind, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Bffind, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -60,8 +60,8 @@ Partial Class dailyinv
         '
         Me.GroupBox1.Controls.Add(Me.DateTimePicker2)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox1.Controls.Add(Me.Pictocust)
-        Me.GroupBox1.Controls.Add(Me.Picfromcust)
+        Me.GroupBox1.Controls.Add(Me.Btfind)
+        Me.GroupBox1.Controls.Add(Me.Bffind)
         Me.GroupBox1.Controls.Add(Me.Txttocus)
         Me.GroupBox1.Controls.Add(Me.Txtfrmcus)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -92,23 +92,23 @@ Partial Class dailyinv
         Me.DateTimePicker1.Size = New System.Drawing.Size(150, 20)
         Me.DateTimePicker1.TabIndex = 61
         '
-        'Pictocust
+        'Btfind
         '
-        Me.Pictocust.Image = CType(resources.GetObject("Pictocust.Image"), System.Drawing.Image)
-        Me.Pictocust.Location = New System.Drawing.Point(416, 67)
-        Me.Pictocust.Name = "Pictocust"
-        Me.Pictocust.Size = New System.Drawing.Size(23, 20)
-        Me.Pictocust.TabIndex = 9
-        Me.Pictocust.TabStop = False
+        Me.Btfind.Image = CType(resources.GetObject("Btfind.Image"), System.Drawing.Image)
+        Me.Btfind.Location = New System.Drawing.Point(416, 67)
+        Me.Btfind.Name = "Btfind"
+        Me.Btfind.Size = New System.Drawing.Size(23, 20)
+        Me.Btfind.TabIndex = 9
+        Me.Btfind.TabStop = False
         '
-        'Picfromcust
+        'Bffind
         '
-        Me.Picfromcust.Image = CType(resources.GetObject("Picfromcust.Image"), System.Drawing.Image)
-        Me.Picfromcust.Location = New System.Drawing.Point(261, 67)
-        Me.Picfromcust.Name = "Picfromcust"
-        Me.Picfromcust.Size = New System.Drawing.Size(23, 20)
-        Me.Picfromcust.TabIndex = 8
-        Me.Picfromcust.TabStop = False
+        Me.Bffind.Image = CType(resources.GetObject("Bffind.Image"), System.Drawing.Image)
+        Me.Bffind.Location = New System.Drawing.Point(261, 67)
+        Me.Bffind.Name = "Bffind"
+        Me.Bffind.Size = New System.Drawing.Size(23, 20)
+        Me.Bffind.TabIndex = 8
+        Me.Bffind.TabStop = False
         '
         'Txttocus
         '
@@ -200,15 +200,15 @@ Partial Class dailyinv
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Report Type"
         '
-        'Button1
+        'Butprint
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(67, 170)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Print"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Butprint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Butprint.Location = New System.Drawing.Point(67, 170)
+        Me.Butprint.Name = "Butprint"
+        Me.Butprint.Size = New System.Drawing.Size(75, 23)
+        Me.Butprint.TabIndex = 14
+        Me.Butprint.Text = "Print"
+        Me.Butprint.UseVisualStyleBackColor = True
         '
         'CMDClose
         '
@@ -226,7 +226,7 @@ Partial Class dailyinv
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(469, 197)
         Me.Controls.Add(Me.CMDClose)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Butprint)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -234,8 +234,8 @@ Partial Class dailyinv
         Me.Text = "Invoice Daily"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.Pictocust, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Picfromcust, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Btfind, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Bffind, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
@@ -246,15 +246,15 @@ Partial Class dailyinv
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Pictocust As System.Windows.Forms.PictureBox
-    Friend WithEvents Picfromcust As System.Windows.Forms.PictureBox
+    Friend WithEvents Btfind As System.Windows.Forms.PictureBox
+    Friend WithEvents Bffind As System.Windows.Forms.PictureBox
     Friend WithEvents Txttocus As System.Windows.Forms.TextBox
     Friend WithEvents Txtfrmcus As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents rbcrdb As System.Windows.Forms.RadioButton
     Friend WithEvents rbinv As System.Windows.Forms.RadioButton
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Butprint As System.Windows.Forms.Button
     Friend WithEvents CMDClose As System.Windows.Forms.Button
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
