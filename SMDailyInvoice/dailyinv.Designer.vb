@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class dailyinv
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class dailyinv
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dailyinv))
         Me.Label1 = New System.Windows.Forms.Label()
@@ -70,7 +70,7 @@ Partial Class dailyinv
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(445, 99)
+        Me.GroupBox1.Size = New System.Drawing.Size(445, 105)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
@@ -160,7 +160,7 @@ Partial Class dailyinv
         Me.GroupBox2.Controls.Add(Me.rbcrdb)
         Me.GroupBox2.Controls.Add(Me.rbinv)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 118)
+        Me.GroupBox2.Location = New System.Drawing.Point(13, 120)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(444, 46)
         Me.GroupBox2.TabIndex = 2
@@ -203,7 +203,7 @@ Partial Class dailyinv
         'Butprint
         '
         Me.Butprint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Butprint.Location = New System.Drawing.Point(67, 170)
+        Me.Butprint.Location = New System.Drawing.Point(67, 181)
         Me.Butprint.Name = "Butprint"
         Me.Butprint.Size = New System.Drawing.Size(75, 23)
         Me.Butprint.TabIndex = 14
@@ -213,7 +213,7 @@ Partial Class dailyinv
         'CMDClose
         '
         Me.CMDClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CMDClose.Location = New System.Drawing.Point(318, 170)
+        Me.CMDClose.Location = New System.Drawing.Point(318, 178)
         Me.CMDClose.Name = "CMDClose"
         Me.CMDClose.Size = New System.Drawing.Size(75, 23)
         Me.CMDClose.TabIndex = 15
@@ -224,7 +224,7 @@ Partial Class dailyinv
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(469, 197)
+        Me.ClientSize = New System.Drawing.Size(469, 211)
         Me.Controls.Add(Me.CMDClose)
         Me.Controls.Add(Me.Butprint)
         Me.Controls.Add(Me.GroupBox2)
@@ -258,5 +258,4 @@ Partial Class dailyinv
     Friend WithEvents CMDClose As System.Windows.Forms.Button
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-
 End Class

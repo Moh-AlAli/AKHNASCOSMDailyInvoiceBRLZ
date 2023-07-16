@@ -317,10 +317,6 @@ Partial Class FromFinder
         End Try
     End Function
 
-
-
-
-
     Private Sub lstData_DoubleClick(sender As Object, e As EventArgs) Handles lstData.DoubleClick
         SetResult()
         DialogResult = DialogResult.OK
@@ -476,4 +472,5 @@ Partial Class FromFinder
         DialogResult = DialogResult.Cancel
         Close()
     End Sub
+
 End Class
