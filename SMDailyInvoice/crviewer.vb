@@ -19,6 +19,8 @@ Friend Class crviewer
     Private ctdate As String
     Private cfrmcust As String
     Private ctocust As String
+    Private cfloc As String
+    Private ctoloc As String
     Private crbinv As Boolean
     Private crbcrn As Boolean
 
@@ -58,7 +60,7 @@ Friend Class crviewer
 
         Return cons
     End Function
-    Public Sub New(ByVal _objectHandle As String, ByVal _sess As acc.Session, ByVal fdate As String, ByVal tdate As String, ByVal frmcust As String, ByVal tocust As String, ByVal rbinv As Boolean, ByVal rbcrn As Boolean)
+    Public Sub New(ByVal _objectHandle As String, ByVal _sess As acc.Session, ByVal fdate As String, ByVal tdate As String, ByVal frmcust As String, ByVal tocust As String, ByVal rbinv As Boolean, ByVal rbcrn As Boolean, ByVal floc As String, ByVal toloc As String)
         InitializeComponent()
         ObjectHandle = _objectHandle
         ccompid = _sess.CompanyID
@@ -69,7 +71,8 @@ Friend Class crviewer
         ctocust = tocust
         crbinv = rbinv
         crbcrn = rbcrn
-
+        cfloc = floc
+        ctoloc = toloc
 
     End Sub
 
@@ -119,8 +122,10 @@ Friend Class crviewer
             rdoc.SetParameterValue("Todate", tdate)
             rdoc.SetParameterValue("FRMCUST", cfrmcust)
             rdoc.SetParameterValue("TOCUST", ctocust)
+            rdoc.SetParameterValue("FRMLOC", cfloc)
+            rdoc.SetParameterValue("TOLOC", ctoloc)
             rdoc.SetParameterValue("CONAME", ccompname)
-            rdoc.SetParameterValue("type", type)
+            ' rdoc.SetParameterValue("type", type)
 
             cryviewer.ReportSource = rdoc
 

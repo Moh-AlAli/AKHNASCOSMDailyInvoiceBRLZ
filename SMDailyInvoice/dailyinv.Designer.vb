@@ -25,6 +25,11 @@ Partial Class dailyinv
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dailyinv))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.pbtoloc = New System.Windows.Forms.PictureBox()
+        Me.pbfrmloc = New System.Windows.Forms.PictureBox()
+        Me.txttoloc = New System.Windows.Forms.TextBox()
+        Me.txtfrmloc = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Btfind = New System.Windows.Forms.PictureBox()
@@ -41,6 +46,8 @@ Partial Class dailyinv
         Me.Butprint = New System.Windows.Forms.Button()
         Me.CMDClose = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.pbtoloc, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbfrmloc, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Btfind, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Bffind, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -58,6 +65,11 @@ Partial Class dailyinv
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.pbtoloc)
+        Me.GroupBox1.Controls.Add(Me.pbfrmloc)
+        Me.GroupBox1.Controls.Add(Me.txttoloc)
+        Me.GroupBox1.Controls.Add(Me.txtfrmloc)
+        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker2)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.Btfind)
@@ -70,9 +82,52 @@ Partial Class dailyinv
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(445, 105)
+        Me.GroupBox1.Size = New System.Drawing.Size(445, 137)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
+        '
+        'pbtoloc
+        '
+        Me.pbtoloc.Image = CType(resources.GetObject("pbtoloc.Image"), System.Drawing.Image)
+        Me.pbtoloc.Location = New System.Drawing.Point(416, 111)
+        Me.pbtoloc.Name = "pbtoloc"
+        Me.pbtoloc.Size = New System.Drawing.Size(23, 20)
+        Me.pbtoloc.TabIndex = 67
+        Me.pbtoloc.TabStop = False
+        '
+        'pbfrmloc
+        '
+        Me.pbfrmloc.Image = CType(resources.GetObject("pbfrmloc.Image"), System.Drawing.Image)
+        Me.pbfrmloc.Location = New System.Drawing.Point(261, 111)
+        Me.pbfrmloc.Name = "pbfrmloc"
+        Me.pbfrmloc.Size = New System.Drawing.Size(23, 20)
+        Me.pbfrmloc.TabIndex = 66
+        Me.pbfrmloc.TabStop = False
+        '
+        'txttoloc
+        '
+        Me.txttoloc.Location = New System.Drawing.Point(290, 111)
+        Me.txttoloc.Name = "txttoloc"
+        Me.txttoloc.Size = New System.Drawing.Size(127, 20)
+        Me.txttoloc.TabIndex = 65
+        '
+        'txtfrmloc
+        '
+        Me.txtfrmloc.Location = New System.Drawing.Point(134, 111)
+        Me.txtfrmloc.Multiline = True
+        Me.txtfrmloc.Name = "txtfrmloc"
+        Me.txtfrmloc.Size = New System.Drawing.Size(129, 20)
+        Me.txtfrmloc.TabIndex = 64
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(16, 115)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(66, 16)
+        Me.Label6.TabIndex = 63
+        Me.Label6.Text = "Location"
         '
         'DateTimePicker2
         '
@@ -160,7 +215,7 @@ Partial Class dailyinv
         Me.GroupBox2.Controls.Add(Me.rbcrdb)
         Me.GroupBox2.Controls.Add(Me.rbinv)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 120)
+        Me.GroupBox2.Location = New System.Drawing.Point(13, 155)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(444, 46)
         Me.GroupBox2.TabIndex = 2
@@ -203,7 +258,7 @@ Partial Class dailyinv
         'Butprint
         '
         Me.Butprint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Butprint.Location = New System.Drawing.Point(67, 181)
+        Me.Butprint.Location = New System.Drawing.Point(67, 205)
         Me.Butprint.Name = "Butprint"
         Me.Butprint.Size = New System.Drawing.Size(75, 23)
         Me.Butprint.TabIndex = 14
@@ -213,7 +268,7 @@ Partial Class dailyinv
         'CMDClose
         '
         Me.CMDClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CMDClose.Location = New System.Drawing.Point(318, 178)
+        Me.CMDClose.Location = New System.Drawing.Point(318, 203)
         Me.CMDClose.Name = "CMDClose"
         Me.CMDClose.Size = New System.Drawing.Size(75, 23)
         Me.CMDClose.TabIndex = 15
@@ -224,7 +279,7 @@ Partial Class dailyinv
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(469, 211)
+        Me.ClientSize = New System.Drawing.Size(469, 230)
         Me.Controls.Add(Me.CMDClose)
         Me.Controls.Add(Me.Butprint)
         Me.Controls.Add(Me.GroupBox2)
@@ -234,6 +289,8 @@ Partial Class dailyinv
         Me.Text = "Invoice Daily"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.pbtoloc, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbfrmloc, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Btfind, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Bffind, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
@@ -258,4 +315,9 @@ Partial Class dailyinv
     Friend WithEvents CMDClose As System.Windows.Forms.Button
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents pbtoloc As PictureBox
+    Friend WithEvents pbfrmloc As PictureBox
+    Friend WithEvents txttoloc As TextBox
+    Friend WithEvents txtfrmloc As TextBox
+    Friend WithEvents Label6 As Label
 End Class

@@ -60,13 +60,15 @@ Friend Enum RecordType
 
         Friend Sub New(ByVal keyFields As String(), ByVal record As XElement)
             Dim tmp As XElement = record
+        For Each s As String In keyFields
+            s = Replace(s, "[", "")
+            s = Replace(s, "]", "")
+            tmp.Elements(s).ElementAt(0).Value = If(record.Elements(s).ElementAt(0).Value = "-", Index.ToString(), record.Elements(s).ElementAt(0).Value)
+            _keyValues.Add(tmp.Elements(s).ElementAt(0).Value)
+        Next
 
-            For Each s As String In keyFields
-                tmp.Elements(s).ElementAt(0).Value = If(record.Elements(s).ElementAt(0).Value = "-", Index.ToString(), record.Elements(s).ElementAt(0).Value)
-                _keyValues.Add(tmp.Elements(s).ElementAt(0).Value)
-            Next
 
-            Data = tmp
+        Data = tmp
             _keyFields = keyFields
         End Sub
 
@@ -185,6 +187,8 @@ Friend Enum RecordType
         Select Case entity
             Case "ARCUS"
                 rt = If(setTo250 = False, "select " & ff.Substring(0, ff.Length - 1) & " from ARCUS", "select top 250 " & ff.Substring(0, ff.Length - 1) & " from ARCUS")
+            Case "ICLOC"
+                rt = If(setTo250 = False, "select " & Replace(ff.Substring(0, ff.Length - 1), ",DESC", ",[DESC]") & " from ICLOC ", "select top 250 " & Replace(ff.Substring(0, ff.Length - 1), ",DESC", ",[DESC]") & " from ICLOC ")
         End Select
 
         Return rt

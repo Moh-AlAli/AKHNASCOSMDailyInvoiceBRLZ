@@ -181,25 +181,7 @@ Friend Class dailyinv
 
 
 
-    Private Sub custstatement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-
-            If Not ObjectHandle Is Nothing Then
-                SessionFromERP(Handle)
-            End If
-            Txttocus.Text = "zzzzzzzzzzzzzzzzzzzzzz"
-
-
-            rbinv.Checked = True
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            Close()
-        End Try
-    End Sub
-
-
-    Private Sub bffind_Click(sender As Object, e As EventArgs) Handles bffind.Click
+    Private Sub bffind_Click(sender As Object, e As EventArgs) Handles Bffind.Click
         Dim f As FromFinder = New FromFinder("ARCUS", "Customer", New String() {"IDCUST", "NAMECUST"}, ERPSession, "", "")
 
         Dim r As DialogResult = f.ShowDialog(Me)
@@ -262,12 +244,23 @@ Friend Class dailyinv
             Else
                 tocust = Trim(Txttocus.Text)
             End If
+
+            Dim toloc As String = ""
+            If txtfrmloc.Text = Nothing Then
+                toloc = "zzzzzzzzzzzzzzzzzzzzzz"
+            Else
+                toloc = Trim(Txttocus.Text)
+            End If
             If Trim(Txtfrmcus.Text) <= Trim(Txttocus.Text) Then
                 If fdate <= tdate Then
-                    Dim f As crviewer = New crviewer(ObjectHandle, ERPSession, fdate, tdate, Txtfrmcus.Text, Txttocus.Text, rbinv.Checked, rbcrdb.Checked)
-                    f.Show()
+                    If Trim(txtfrmloc.Text) <= Trim(txttoloc.Text) Then
+                        Dim f As crviewer = New crviewer(ObjectHandle, ERPSession, fdate, tdate, Txtfrmcus.Text, Txttocus.Text, rbinv.Checked, rbcrdb.Checked, txtfrmloc.Text, toloc)
+                        f.Show()
+                    Else
+                        MessageBox.Show("From Location  greater than To Location")
+                    End If
                 Else
-                    MessageBox.Show("From Date  greater than To Date")
+                        MessageBox.Show("From Date  greater than To Date")
                 End If
             Else
                 MessageBox.Show("From Customer No greater than To Customer No")
@@ -275,6 +268,45 @@ Friend Class dailyinv
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub pbfrmloc_Click(sender As Object, e As EventArgs) Handles pbfrmloc.Click
+        Dim f As FromFinder = New FromFinder("ICLOC", "Location", New String() {"LOCATION", "[DESC]"}, ERPSession, "", "")
+
+        Dim r As DialogResult = f.ShowDialog(Me)
+        If r = DialogResult.OK Then
+            txtfrmloc.Text = f.Result.ToArray()(0)
+            txttoloc.Text = f.Result.ToArray()(0)
+            fndEditBoxValidate(txtfrmloc, EventArgs.Empty)
+        End If
+    End Sub
+
+    Private Sub pbtoloc_Click(sender As Object, e As EventArgs) Handles pbtoloc.Click
+        Dim f As FromFinder = New FromFinder("ICLOC", "Location", New String() {"LOCATION", "[DESC]"}, ERPSession, "", "")
+
+        Dim r As DialogResult = f.ShowDialog(Me)
+        If r = DialogResult.OK Then
+            txttoloc.Text = f.Result.ToArray()(0)
+            fndEditBoxValidate(txttoloc, EventArgs.Empty)
+        End If
+
+    End Sub
+
+    Private Sub dailyinv_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+
+            If Not ObjectHandle Is Nothing Then
+                SessionFromERP(Handle)
+            End If
+            Txttocus.Text = "zzzzzzzzzzzzzzzzzzzzzz"
+            txttoloc.Text = "zzzzzzzzzzzzzzzzzzzzzz"
+
+            rbinv.Checked = True
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Close()
         End Try
     End Sub
 End Class

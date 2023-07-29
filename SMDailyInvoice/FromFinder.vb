@@ -59,6 +59,19 @@ Partial Class FromFinder
                 lstData.Items.Add(New ListViewItem(New String() {" ", " "}))
                 cmbFindBy.Items.AddRange(New LookupItem() {New LookupItem("Show All Records", "C", "ALL"), New LookupItem("Customer Number", "C", "IDCUST"), New LookupItem("Customer Name", "C", "NAMECUST")})
                 Exit Select
+            Case "ICLOC"
+
+                cols = New ColumnHeader() {New ColumnHeader() With {
+                        .Text = "Location",
+                        .Width = 200
+                    }, New ColumnHeader() With {
+                        .Text = "Description",
+                        .Width = 300
+                    }}
+                lstData.Items.Add(New ListViewItem(New String() {" ", " "}))
+                cmbFindBy.Items.AddRange(New LookupItem() {New LookupItem("Show All Records", "C", "ALL"), New LookupItem("Location", "C", "LOCATION"), New LookupItem("Description", "C", "[DESC]")})
+                Exit Select
+
         End Select
         Text = capt
         lstData.Columns.AddRange(cols)
@@ -101,7 +114,7 @@ Partial Class FromFinder
         Dim msg As String = FindEx(_entity, fil, data, iniz)
 
         If msg.Length <> 0 Then
-            MessageBox.Show(Me, msg, "Customer Statement", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+            MessageBox.Show(Me, msg, "Daily Invoices BRLZ", MessageBoxButtons.OK, MessageBoxIcon.[Error])
             Return
         End If
 

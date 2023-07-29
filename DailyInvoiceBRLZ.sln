@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SMDailyInvoice", "SMDailyInvoice\SMDailyInvoice.vbproj", "{9B285F5B-3D7A-46CA-AB86-CAA33126840F}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DailyInvoiceBRLZ", "SMDailyInvoice\DailyInvoiceBRLZ.vbproj", "{9B285F5B-3D7A-46CA-AB86-CAA33126840F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C9AC659-8214-4E94-9E2A-B598211462B7}
 	EndGlobalSection
 EndGlobal
