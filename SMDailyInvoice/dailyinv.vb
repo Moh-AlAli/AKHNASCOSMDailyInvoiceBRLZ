@@ -249,7 +249,7 @@ Friend Class dailyinv
             If txtfrmloc.Text = Nothing Then
                 toloc = "zzzzzzzzzzzzzzzzzzzzzz"
             Else
-                toloc = Trim(Txttocus.Text)
+                toloc = Trim(txtfrmloc.Text)
             End If
             If Trim(Txtfrmcus.Text) <= Trim(Txttocus.Text) Then
                 If fdate <= tdate Then
