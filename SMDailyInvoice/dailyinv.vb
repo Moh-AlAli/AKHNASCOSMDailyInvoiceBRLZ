@@ -251,16 +251,16 @@ Friend Class dailyinv
             Else
                 toloc = Trim(txttoloc.Text)
             End If
-            If Trim(Txtfrmcus.Text) <= Trim(Txttocus.Text) Then
+            If Trim(Txtfrmcus.Text) <= Trim(tocust) Then
                 If fdate <= tdate Then
-                    If Trim(txtfrmloc.Text) <= Trim(txttoloc.Text) Then
-                        Dim f As crviewer = New crviewer(ObjectHandle, ERPSession, fdate, tdate, Txtfrmcus.Text, Txttocus.Text, rbinv.Checked, rbcrdb.Checked, txtfrmloc.Text, toloc)
+                    If Trim(txtfrmloc.Text) <= Trim(toloc) Then
+                        Dim f As crviewer = New crviewer(ObjectHandle, ERPSession, fdate, tdate, Txtfrmcus.Text, tocust, rbinv.Checked, rbcrdb.Checked, txtfrmloc.Text, toloc)
                         f.Show()
                     Else
                         MessageBox.Show("From Location  greater than To Location")
                     End If
                 Else
-                        MessageBox.Show("From Date  greater than To Date")
+                    MessageBox.Show("From Date  greater than To Date")
                 End If
             Else
                 MessageBox.Show("From Customer No greater than To Customer No")
